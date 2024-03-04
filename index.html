@@ -3,109 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Display</title>
+    <title>Login Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
         }
         .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
+            width: 50%;
+            margin: auto;
+            padding-top: 100px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
             background-color: #fff;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
+        label {
             display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #4caf50;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Enter a Number</h1>
-        <input type="number" id="numberInput">
-	<button onclick="submitNumber()">Submit</button>
-		
-	<table class="contact-form">
-        	<form action="https://formsubmit.co/pasumartivamsikrishna@gmail.com" method="POST">
-                        <tr>
-                            <td style="visibility:hidden;" class="form-group-title">Title</td>
-                            <td style="visibility:hidden;"><input type="text" name="title" id="Title" value="DISASTER Manag."</td>
-                        </tr>
-                        <tr>
-                            <td style="visibility:hidden;" class="form-group-title">Name</td>
-                            <td style="visibility:hidden;"><input type="text" name="name" id="name" value="Vamsi"></td>
-                        </tr>
-                        <tr>
-                            <td style="visibility:hidden;" class="form-group-title">Email</td>
-                            <td style="visibility:hidden;"><input type="email" name="email" id="email" value="pasumartivamsikrishna@gmail.com"></td>
-                        </tr>
-                        <tr>
-                            <td style="visibility:hidden;" class="form-group-title">Subject</td>
-                            <td style="visibility:hidden;"><input type="text" name="subject" id="subject" value="EarthQuake"></td>
-                        </tr>
-                        <tr>
-                            <td style="visibility:hidden;" class="form-group-title">Message</td>
-                            <td style="visibility:hidden;"><textarea name="message" id="message" value="EarthQuake"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><button type="submit" class="btn-md">Send</button></td>
-                        </tr>
-                    </form>
-    	</table>
-
-        
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Submit">
+        </form>
     </div>
-    
+
     <script>
-        function submitNumber() {
-            var input = document.getElementById("numberInput").value;
-            // Check if the input value is greater than 6
-            if (input > 6) {
-                // Open a new window with the video
-                var newWindow = window.open('', 'VideoWindow', 'width=640,height=360');
-                newWindow.document.write('<!DOCTYPE html>');
-                newWindow.document.write('<html lang="en">');
-                newWindow.document.write('<head>');
-                newWindow.document.write('<meta charset="UTF-8">');
-                newWindow.document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-                newWindow.document.write('<title>Video Display</title>');
-                newWindow.document.write('</head>');
-                newWindow.document.write('<body style="margin: 0; background-color: #000;">');
-                newWindow.document.write('<video controls autoplay>');
-                newWindow.document.write('<source src=""C:\Users\yenum\OneDrive\Desktop\idea\train.mp4"" type="video/mp4">');
-                newWindow.document.write('Your browser does not support the video tag.');
-                newWindow.document.write('</video>');
-                newWindow.document.write('</body>');
-                newWindow.document.write('</html>');
-            }
-        }
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Redirect to the new webpage
+            window.location.href = "file:///C:/Users/yenum/OneDrive/Desktop/idea/22areas.html";
+        });
     </script>
 </body>
 </html>
